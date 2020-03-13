@@ -1,5 +1,12 @@
 import React from 'react'
 import moment from 'moment'
+
+const style = {
+    fontSize: '20pt',
+    padding: '3%',
+    margin: 0
+};
+
 /**
  * Updates every minute
  */
@@ -34,7 +41,9 @@ export default class DateViewer extends React.Component {
     render() {
         return (
             <div>
-                <h4>{this.getWeekdayName()}, {this.getMonthName()} {this.getDateNumber()}.</h4>
+                <p style={style}>
+                    {this.getWeekdayName()}, {this.getMonthName()} {this.getDateNumber()}.
+                </p>
             </div>
         );
     }

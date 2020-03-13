@@ -5,39 +5,37 @@ import Clock from './Clock'
 import DateViewer from './DateViewer'
 
 import './DateContainer.css'
-const section = {
-    minHeight: "200px",
-    paddingTop: 5,
-  };
-const textStyle = {
-    margin: 0
-}
+
+const style = {
+ textStyle: {margin: 0, fontSize: '20pt', textAlign: 'right'},
+ container: {paddingTop: '5%'}
+};
 
 export default class DateContainer extends React.Component {
     render() {
         return (
             <Grid item xs={12}>
-                <div style={section}>
+                <div>
                     <Grid container spacing={1}>
                         <Grid item xs={6}>
-                            <Clock timezone="Europe/Stockholm" size="80"/>
+                            <Clock timezone="Europe/Stockholm" size="70"/>
                             <DateViewer />
                         </Grid>
                         <Grid item xs={6}>
-                            <Grid container spacing={2}>
+                            <Grid container spacing={2} style={style.container}>
                                 <Grid item xs={6}>
-                                    <p style={textStyle}>BKK</p>
+                                    <p style={style.textStyle}>BKK</p>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Clock timezone="Asia/Bangkok" size="40"/>
+                                    <Clock timezone="Asia/Bangkok" size="22"/>
                                 </Grid>
                             </Grid>
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
-                                    <p style={textStyle}>LA</p>
+                                    <p style={style.textStyle}>LA</p>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Clock timezone="America/Los_Angeles" size="40"/>
+                                    <Clock timezone="America/Los_Angeles" size="22"/>
                                 </Grid>
                             </Grid>
                         </Grid>

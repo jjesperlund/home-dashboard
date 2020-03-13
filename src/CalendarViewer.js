@@ -16,7 +16,6 @@ const style = {
         textAlign: 'center',
         width: '100%',
         padding: '3%',
-        marginTop: '7%'
     },
     calendar: {
         height: '55vh',

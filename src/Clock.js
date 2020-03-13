@@ -9,7 +9,7 @@ constructor(props) {
     super(props);
         this.state = {date: moment()};
         this.textStyle = {
-            fontSize: Number(props.size),
+            fontSize: props.size + 'pt',
             margin: 0
         };
     }
@@ -31,7 +31,7 @@ constructor(props) {
         return (
             <div>
                 <p style={this.textStyle}>
-                    {this.state.date.tz(this.props.timezone).format('hh:mm')}
+                    {this.state.date.tz(this.props.timezone).format('HH:mm')}
                 </p>
             </div>
         );
