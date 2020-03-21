@@ -7,6 +7,7 @@ import DateContainer from './DateContainer'
 import CalendarViewer from './CalendarViewer'
 import WeatherContainer from './weather/WeatherContainer'
 import StockMarket from './StockMarket'
+import NewsViewer from './news/NewsViewer'
 
 import './App.css';
 
@@ -41,11 +42,19 @@ function App() {
             <Grid item xs={4}>
             <div style={boxStyle}>
               <h1>Box</h1> 
-              <StockMarket />   
+              {/*<StockMarket />*/}
+
             </div>
             </Grid>
             <Grid container spacing={1}>
-              <CalendarViewer />
+              <Grid item xs={6}>
+                <CalendarViewer />
+              </Grid>
+              <Grid item xs={6}>
+                <div style={boxStyle}>
+                  <NewsViewer />
+                </div>
+              </Grid>
             </Grid>
           </Grid>
         </div>
