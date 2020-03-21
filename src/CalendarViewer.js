@@ -16,10 +16,16 @@ const style = {
         textAlign: 'center',
         width: '100%',
         padding: '3%',
+        backgroundColor: '#383838',
+        borderRadius: '7px',
+        zIndex: 1,
+        opacity: 0.8
+          
     },
     calendar: {
         height: '55vh',
-        fontSize: 15
+        fontSize: 15,
+        zIndex: 2
     }
 }
 /**

@@ -15,7 +15,7 @@ const weatherLogoSize = 60;
 
 const style = {
     logo: {textAlign: '-webkit-center'},
-    day: {fontSize: '25pt', margin: 0}
+    day: {fontSize: '15pt', margin: 0}
 }
 
 const weatherConditions = {
@@ -195,9 +195,7 @@ export default class ForcastWeather extends React.Component {
                 {/* Which day */}
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
-                        <p style={style.day}>
-                            {this.getWeekdayName(this.state.weatherItems[0].time)}
-                        </p>
+                        <p style={style.day}>Tomorrow</p>
                     </Grid>
                     <Grid item xs={6}>
                         <p style={style.day}>

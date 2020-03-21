@@ -6,8 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import DateContainer from './DateContainer'
 import CalendarViewer from './CalendarViewer'
 import WeatherContainer from './weather/WeatherContainer'
+import StockMarket from './StockMarket'
 
 import './App.css';
+
+const TradingView = window.tv;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,9 +20,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const boxStyle = {
-  border: '2px solid blue',
+  backgroundColor: '#303030',
+  borderRadius: '7px',
+  zIndex: 1,
+  opacity: 0.8,
   textAlign: 'center',
-  height: '100%',
 }
 
 function App() {
@@ -31,11 +36,12 @@ function App() {
           <Grid container spacing={1}>
             <DateContainer />
             <Grid item xs={8}>
-              <div style={boxStyle}><WeatherContainer /></div>
+              <WeatherContainer />
             </Grid>
             <Grid item xs={4}>
             <div style={boxStyle}>
-              <div style={boxStyle}><h1>Box</h1></div>
+              <h1>Box</h1> 
+              <StockMarket />   
             </div>
             </Grid>
             <Grid container spacing={1}>

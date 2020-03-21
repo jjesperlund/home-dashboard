@@ -28,7 +28,7 @@ const weatherConditions = {
 
 const style = {
     logo: {textAlign: '-webkit-center'},
-    temp: {fontSize: '30pt', marginTop: '5%', marginBottom: 0}
+    temp: {fontSize: '20pt', marginTop: '5%', marginBottom: 0}
 }
 
 /**
