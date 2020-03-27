@@ -7,17 +7,20 @@ import DateViewer from './DateViewer'
 import './DateContainer.css'
 
 const style = {
- textStyle: {margin: 0, fontSize: '20pt', textAlign: 'right'},
+ textStyle: {margin: 0, fontSize: '27pt', textAlign: 'right', paddingTop: '2%'},
  container: {paddingTop: '5%', zIndex: 1},
  videoPlayer: {
-     height: '40vh',
+     height: '60vh',
      width: '100%',
      overflow: 'hidden',
      position: 'absolute',
-     marginTop: '-10%',
+     marginTop: '-30%',
      opacity: '0.5'
  },
- moveToFront: {zIndex: 1}
+ moveToFront: {zIndex: 1},
+ paddingAll: {paddingTop: '3%'},
+ paddingMainClock: {textAlign: 'left', paddingLeft: '7%'},
+ paddingWorldClock: {paddingTop: '4%'}
 };
 
 export default class DateContainer extends React.Component {
@@ -25,22 +28,23 @@ export default class DateContainer extends React.Component {
         return (
             <Grid item xs={12}>
                 <div>
-                    <Grid container spacing={1}>
-
+                    <Grid container spacing={1} style={style.paddingAll}>
+                        {/*
                         <video autoPlay loop muted type="video/mp4" style={style.videoPlayer}>
-                            <source src="/content/bridge.mp4" />
+                            <source src="/content/blur.mp4" />
                         </video>
-                        <Grid item xs={6} style={style.moveToFront}>
-                            <Clock timezone="Europe/Stockholm" size="60"/>
+                        */}
+                        <Grid item xs={6} style={style.paddingMainClock}>
+                            <Clock timezone="Europe/Stockholm" size="80" seconds="true"/>
                             <DateViewer />
                         </Grid>
                         <Grid item xs={6}>
-                            <Grid container spacing={2} style={style.container}>
+                            <Grid container spacing={2} style={style.paddingWorldClock}>
                                 <Grid item xs={6} style={style.moveToFront}>
                                     <p style={style.textStyle}>BKK</p>
                                 </Grid>
                                 <Grid item xs={6} style={style.moveToFront}>
-                                    <Clock timezone="Asia/Bangkok" size="22"/>
+                                    <Clock timezone="Asia/Bangkok" size="35" seconds="false"/>
                                 </Grid>
                             </Grid>
                             <Grid container spacing={2}>
@@ -48,7 +52,7 @@ export default class DateContainer extends React.Component {
                                     <p style={style.textStyle}>LA</p>
                                 </Grid>
                                 <Grid item xs={6} style={style.moveToFront}>
-                                    <Clock timezone="America/Los_Angeles" size="22"/>
+                                    <Clock timezone="America/Los_Angeles" size="35" seconds="false"/>
                                 </Grid>
                             </Grid>
                         </Grid>

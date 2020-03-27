@@ -20,12 +20,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const boxStyle = {
-  backgroundColor: '#303030',
-  borderRadius: '7px',
-  zIndex: 1,
-  opacity: 0.8,
-  textAlign: 'center',
+const bottom = {
+  paddingTop: '4%'
+}
+
+const style = {
+  headerMedium: {margin: '2%', fontWeight: 100, fontSize: '20pt'}
 }
 
 function App() {
@@ -36,24 +36,25 @@ function App() {
         <div className={classes.root}>
           <Grid container spacing={1}>
             <DateContainer />
-            <Grid item xs={8}>
+            <Grid item xs={8} style={bottom}>
               <WeatherContainer />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} style={bottom}>
+            {/*
             <div style={boxStyle}>
               <h1>Box</h1> 
-              {/*<StockMarket />*/}
+              <StockMarket />
 
             </div>
+            */}
             </Grid>
-            <Grid container spacing={1}>
+            <Grid container spacing={5}>
               <Grid item xs={6}>
                 <CalendarViewer />
               </Grid>
               <Grid item xs={6}>
-                <div style={boxStyle}>
+                <p>Latest News</p>
                   <NewsViewer />
-                </div>
               </Grid>
             </Grid>
           </Grid>

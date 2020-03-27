@@ -15,7 +15,7 @@ export default class NewsViewer extends React.Component {
         this.state = {
             newsItems: []
         }
-        this.maxArticles = 10;
+        this.maxArticles = 5;
     }
 
     componentDidMount() {

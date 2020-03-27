@@ -15,7 +15,8 @@ const weatherLogoSize = 60;
 
 const style = {
     logo: {textAlign: '-webkit-center'},
-    day: {fontSize: '15pt', margin: 0}
+    day: {fontSize: '20pt', margin: 0},
+    font: {fontSize: '17pt'}
 }
 
 const weatherConditions = {
@@ -119,7 +120,14 @@ export default class ForcastWeather extends React.Component {
             }
 
             // Check if all items in ONE day have been iterated
-            if (moment(nextItemDay).isAfter(currentItemDay, 'day')) {            
+            if (moment(nextItemDay).isAfter(currentItemDay, 'day')) {    
+                
+                // Handle error if weather condition has not been set
+                if (weatherCondition == '') {
+                    weatherCondition = item.weather[0].main;
+                    weatherConditionDescription = item.weather[0].description;
+                    amountClouds = item.clouds.all;
+                }
 
                 weatherEvents.push({
                     time: currentItemDay,
@@ -158,6 +166,7 @@ export default class ForcastWeather extends React.Component {
                 return weatherConditions.ClearWindy;
             }
         }
+
         return weatherConditions[item.weather];
     }
 
@@ -180,7 +189,7 @@ export default class ForcastWeather extends React.Component {
        if (this.state.weatherItems.length == 0) return null;
        
        return (
-            <div style={{fontSize: '15pt'}}>
+            <div style={style.font}>
                 {/* Weather icons */}
 
                 <Grid container spacing={1}>

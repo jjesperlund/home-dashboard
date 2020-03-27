@@ -117,6 +117,7 @@ export default class CalendarViewer extends React.Component {
     }
 
     render() {
+        console.log(this.state.events)
         return (
             <div style={style.calendarContainer}>
                 <Calendar
@@ -124,7 +125,7 @@ export default class CalendarViewer extends React.Component {
                 toolbar={false}
                 events={this.state.events}
                 defaultDate={new Date()}
-                defaultView="month"
+                defaultView="agenda"
                 style={style.calendar}
                 />
             </div>

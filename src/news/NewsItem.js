@@ -4,14 +4,21 @@ import Grid from '@material-ui/core/Grid';
 
 const style = {
     text: {textAlign: 'left', padding: '10px', margin: 0},
-    image: {maxWidth: '200px'},
+    image: {maxHeight: '100px', display: 'block', paddingTop: '2%', borderRadius: '7px'},
     source: {fontSize: '10pt', margin: 0},
-    heading: {fontSize: '15pt', marginTop: '5%'}
+    heading: {fontSize: '15pt', marginTop: '2%', fontWeight: 600},
+    boxStyle: {
+        backgroundColor: 'rgba(48, 48, 48, 0.3)',
+        borderRadius: '7px',
+        zIndex: 1,
+        textAlign: 'center',
+        margin: '1% 0%'
+    }
 };
 
 export default function NewsItem(props) {
 return (
-    <div style={{border: '1px solid white'}}>
+    <div style={style.boxStyle}>
             <Grid container spacing={1}>
             <Grid item xs={8} style={style.text}>
                 <p style={style.source}>{props.source} - {moment(props.published).format('DD MMM HH:ss')}</p>

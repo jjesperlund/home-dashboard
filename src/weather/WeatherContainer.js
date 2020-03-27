@@ -4,10 +4,9 @@ import CurrentWeather from './CurrentWeather'
 import ForcastWeather from './ForcastWeather'
 
 const boxStyle = {
-    backgroundColor: '#303030',
+    backgroundColor: 'rgba(48, 48, 48, 0)',
     borderRadius: '7px',
     zIndex: 1,
-    opacity: 0.8
   }
 
 export default class WeatherContainer extends React.Component {

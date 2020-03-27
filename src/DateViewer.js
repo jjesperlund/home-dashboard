@@ -2,8 +2,7 @@ import React from 'react'
 import moment from 'moment'
 
 const style = {
-    fontSize: '20pt',
-    padding: '3%',
+    fontSize: '24pt',
     margin: 0
 };
 

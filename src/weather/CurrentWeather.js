@@ -28,7 +28,8 @@ const weatherConditions = {
 
 const style = {
     logo: {textAlign: '-webkit-center'},
-    temp: {fontSize: '20pt', marginTop: '5%', marginBottom: 0}
+    temp: {fontSize: '40pt', marginTop: 0, marginBottom: 0},
+    font: {fontSize: '20pt'}
 }
 
 /**
@@ -131,7 +132,7 @@ export default class CurrentWeather extends React.Component {
 
         */
         return (
-            <div style={{fontSize: '15pt'}}>
+            <div style={style.font}>
                 <Grid container spacing={1}>
                     <Grid item xs={6} style={style.logo}>
                         {this.displayWeatherIcon()}
