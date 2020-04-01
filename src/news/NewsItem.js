@@ -4,11 +4,12 @@ import Grid from '@material-ui/core/Grid';
 
 const style = {
     text: {textAlign: 'left', padding: '10px', margin: 0},
-    image: {maxHeight: '100px', display: 'block', paddingTop: '2%', borderRadius: '7px'},
-    source: {fontSize: '10pt', margin: 0},
+    image: {maxWidth: '160px', display: 'block', paddingTop: '5%', borderRadius: '7px'},
+    source: {fontSize: '13pt', margin: 0},
     heading: {fontSize: '15pt', marginTop: '2%', fontWeight: 600},
     boxStyle: {
-        backgroundColor: 'rgba(48, 48, 48, 0.3)',
+        backgroundColor: 'rgba(10, 10, 10, 0.4)',
+        borderLeft: '5px solid #4ba5f3',
         borderRadius: '7px',
         zIndex: 1,
         textAlign: 'center',

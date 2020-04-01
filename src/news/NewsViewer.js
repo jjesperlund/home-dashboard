@@ -56,7 +56,7 @@ export default class NewsViewer extends React.Component {
         data.articles.forEach(item => {
             items.push({
                 published: item.publishedAt,
-                source: item.source.name,
+                source: item.source.name.toLowerCase(),
                 title: item.title,
                 description: item.description,
                 image: item.urlToImage
