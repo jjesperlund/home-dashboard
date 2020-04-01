@@ -29,7 +29,10 @@ const weatherConditions = {
 const style = {
     logo: {textAlign: '-webkit-center'},
     temp: {fontSize: '40pt', marginTop: 0, marginBottom: 0},
-    font: {fontSize: '20pt'}
+    font: {fontSize: '20pt'},
+    sunDay: {margin: 0},
+    sunDayContainer: {padding: 0},
+    container: {paddingRight: '7%'}
 }
 
 /**
@@ -133,24 +136,25 @@ export default class CurrentWeather extends React.Component {
         */
         return (
             <div style={style.font}>
-                <Grid container spacing={1}>
-                    <Grid item xs={6} style={style.logo}>
+                <Grid container spacing={1} style={style.container}>
+                    <Grid item xs={1} />
+                    <Grid item xs={5} style={style.sunDayContainer}>
+                        <p style={style.sunDay}>
+                            &#x2197; {moment(this.state.currentWeather.sunrise).format('HH:ss')}
+                        </p>
+                        <p style={style.sunDay}>
+                            &#x2198; {moment(this.state.currentWeather.sunset).format('HH:ss')}
+                        </p>
+                    </Grid>
+                    <Grid item xs={2} style={style.logo}>
                         {this.displayWeatherIcon()}
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <p style={style.temp}>{this.state.currentWeather.temp}&#176;</p>
                     </Grid>
                 </Grid>
             
-        <p>&#x21DC; {this.state.currentWeather.wind_speed} m/s</p>
-               <Grid container spacing={1}>
-                    <Grid item xs={6}>
-                        {moment(this.state.currentWeather.sunrise).format('HH:ss')} &#x2197;
-                    </Grid>
-                    <Grid item xs={6}>
-                        {moment(this.state.currentWeather.sunset).format('HH:ss')} &#x2198;
-                    </Grid>
-                </Grid>
+                {/* <p>&#x21DC; {this.state.currentWeather.wind_speed} m/s</p> */}
                
             </div>
         );

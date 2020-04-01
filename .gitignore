@@ -6,7 +6,7 @@
 .pnp.js
 
 # videos
-/public/content
+/public/videos
 
 # testing
 /coverage

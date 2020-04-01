@@ -16,7 +16,7 @@ const weatherLogoSize = 60;
 const style = {
     logo: {textAlign: '-webkit-center'},
     day: {fontSize: '20pt', margin: 0},
-    font: {fontSize: '17pt'}
+    divStyle: {fontSize: '17pt', paddingTop: '5%'}
 }
 
 const weatherConditions = {
@@ -189,38 +189,44 @@ export default class ForcastWeather extends React.Component {
        if (this.state.weatherItems.length == 0) return null;
        
        return (
-            <div style={style.font}>
+            <div style={style.divStyle}>
                 {/* Weather icons */}
 
                 <Grid container spacing={1}>
-                    <Grid item xs={6} style={style.logo}>
+                    <Grid item xs={3} />
+                    <Grid item xs={4} style={style.logo}>
                         {this.displayWeatherIcon(this.state.weatherItems[0])}
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         {this.displayWeatherIcon(this.state.weatherItems[1])}
                     </Grid>
+                    <Grid item xs={1} />
                 </Grid>
 
                 {/* Which day */}
                 <Grid container spacing={1}>
-                    <Grid item xs={6}>
+                    <Grid item xs={3} />
+                    <Grid item xs={4}>
                         <p style={style.day}>Tomorrow</p>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         <p style={style.day}>
                             {this.getWeekdayName(this.state.weatherItems[1].time)}
                         </p>
                     </Grid>
+                    <Grid item xs={1} />
                 </Grid>    
 
                 {/* Max/min temp */}             
                 <Grid container spacing={1}>
-                    <Grid item xs={6}>
+                    <Grid item xs={3} />
+                    <Grid item xs={4}>
                         {this.state.weatherItems[0].max_temp}/{this.state.weatherItems[0].min_temp}&#176;
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={4}>
                         {this.state.weatherItems[1].max_temp}/{this.state.weatherItems[1].min_temp}&#176;
                     </Grid>
+                    <Grid item xs={1} />
                 </Grid>  
 
             </div>

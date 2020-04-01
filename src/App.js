@@ -25,7 +25,12 @@ const bottom = {
 }
 
 const style = {
-  headerMedium: {margin: '2%', fontWeight: 100, fontSize: '20pt'}
+  headerMedium: {margin: '2%', fontWeight: 100, fontSize: '20pt'},
+  videoWrapper: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute'
+  }
 }
 
 function App() {
@@ -34,22 +39,30 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className={classes.root}>
-          <Grid container spacing={1}>
-            <DateContainer />
-            <Grid item xs={8} style={bottom}>
+          <Grid container spacing={1} /*style={style.videoWrapper}*/>
+            {/*
+            <video loop muted autoPlay type="video/mp4" class="fullscreen-bg__video">
+              <source src="/videos/dynamic/beach.mp4" />
+            </video>
+            */}
+            <Grid item xs={6}>
+              <DateContainer />
+            </Grid>
+            <Grid item xs={6} style={bottom}>
               <WeatherContainer />
             </Grid>
-            <Grid item xs={4} style={bottom}>
             {/*
+            <Grid item xs={4} style={bottom}>
             <div style={boxStyle}>
               <h1>Box</h1> 
               <StockMarket />
 
             </div>
-            */}
             </Grid>
-            <Grid container spacing={5}>
+            */}
+            <Grid container spacing={5} style={{paddingTop: '10%'}}>
               <Grid item xs={6}>
+                <p>Agenda</p>
                 <CalendarViewer />
               </Grid>
               <Grid item xs={6}>

@@ -17,10 +17,12 @@ export default class WeatherContainer extends React.Component {
         return (
             <div>
                <Grid container spacing={1}>
-                    <Grid item xs={4} style={boxStyle}>
+                   <Grid item xs={2} />
+                    <Grid item xs={10} style={boxStyle}>
                         <CurrentWeather />
                     </Grid>
-                    <Grid item xs={8} style={boxStyle}>
+                    <Grid item xs={2} />
+                    <Grid item xs={10} style={boxStyle}>
                         <ForcastWeather />
                     </Grid>
                 </Grid>
