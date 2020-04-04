@@ -1,5 +1,4 @@
 import React from 'react';
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import Grid from '@material-ui/core/Grid';
 import moment from 'moment';
 import "moment-timezone";
