@@ -1,10 +1,14 @@
 import React from 'react';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import Grid from '@material-ui/core/Grid';
 import moment from 'moment';
 import "moment-timezone";
 import API_KEY from './utils/google-calendar-api'
 
 // limit 1,000,000 queries per day
+
+const localizer = momentLocalizer(moment);
 
 const style = {
     calendarContainer: {
@@ -200,6 +204,16 @@ export default class CalendarViewer extends React.Component {
     render() {
         return (
             <div>
+                {/*
+                <Calendar
+                localizer={localizer}
+                toolbar={false}
+                events={this.state.events}
+                defaultDate={new Date()}
+                defaultView="agenda"
+                style={style.calendar}
+                />
+                */}
                 <Grid container spacing={1}>
                     {this.renderItems(5)}
                 </Grid>
